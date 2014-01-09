@@ -1,20 +1,20 @@
 package user.db;
 
 import org.ektorp.CouchDbConnector;
-import org.ektorp.ViewQuery;
 import org.ektorp.support.CouchDbRepositorySupport;
 import org.ektorp.support.GenerateView;
 import org.ektorp.support.View;
-import user.ws.User;
+import user.ws.bean.User;
 
 import java.util.List;
 
 /**
- * Created by denisazevedo on 09/01/14.
+ * Created by denisazevedo on 09/01/2014.
  */
 //@View(name = "test_view", file = "test_view.json")
 public class UserRepository extends CouchDbRepositorySupport<User> {
 
+    //TODO add Spring to the project
 //    @Autowired
 //    public UserRepository(@Qualifier("userDatabase") CouchDbConnector db) {
     public UserRepository(CouchDbConnector db) {

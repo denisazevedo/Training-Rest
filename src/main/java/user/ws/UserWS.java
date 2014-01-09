@@ -2,6 +2,7 @@ package user.ws;
 
 import com.sun.jersey.api.container.httpserver.HttpServerFactory;
 import com.sun.net.httpserver.HttpServer;
+import user.ws.bean.User;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,7 +10,9 @@ import javax.ws.rs.Produces;
 import java.io.IOException;
 
 /**
- * Created by denisazevedo on 09/01/14.
+ * User WebService
+ * TODO Delete?
+ * Created by denisazevedo on 09/01/2014.
  */
 @Path("/user")
 public class UserWS {
@@ -24,8 +27,7 @@ public class UserWS {
     @Produces("application/json")
     public String getMockUser() {
         User user = new User("john@smith.com", "John Smith", "1234");
-//        return user.toJSON();
-        return "Mock";
+        return user.toJSON();
     }
 
     public static void main(String[] args) throws IOException {

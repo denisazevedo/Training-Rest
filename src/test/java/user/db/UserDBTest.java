@@ -10,12 +10,13 @@ import org.ektorp.http.StdHttpClient;
 import org.ektorp.impl.StdCouchDbConnector;
 import org.ektorp.impl.StdCouchDbInstance;
 import org.testng.annotations.*;
-import user.ws.User;
+import user.ws.bean.User;
 
 import java.util.List;
 
 /**
- * Created by denisazevedo on 09/01/14.
+ * Test for CouchDB.
+ * Created by denisazevedo on 09/01/2014.
  */
 public class UserDBTest {
 
@@ -105,7 +106,7 @@ public class UserDBTest {
     public void testContains() throws Exception {
 
         boolean contains = repo.contains("undefinedUser");
-        assert contains == false : "Should not find the user";
+        assert !contains : "Should not find the user";
 
         contains = repo.contains("denis.azevedo@gmail.com");
         assert contains : "Should find the user";
